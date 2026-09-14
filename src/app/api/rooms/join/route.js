@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 import { adminDb } from "@/lib/firebase-admin";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { getServerSession } from "@/lib/auth-server";
 import { FieldValue } from "firebase-admin/firestore";
 
 export async function POST(req) {
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { inviteId } = await req.json();
@@ -15,7 +14,7 @@ export async function POST(req) {
 
   const invite = inviteSnap.data();
 
-if (invite.toEmail !== user.email){
+if (invite.toEmail !== session.user.email){
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

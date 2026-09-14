@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
-<<<<<<< HEAD
 import { getAdminDb } from "@/lib/firebase-admin";
-=======
-import { adminDb } from "@/lib/firebase-admin";
 import { getServerSession } from "@/lib/auth-server";
->>>>>>> upstream/main
 
 // Daily quest templates - rotates based on day
 const QUEST_TEMPLATES = [

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { BarChart3, Wifi, Brain, Video, BookOpen, Crown, Download, Sparkles, Zap } from "lucide-react";
+import { BarChart3, Wifi, Brain, Video, BookOpen, Crown, Download, Sparkles, Zap, Layers } from "lucide-react";
 import { PageBackground, GridPattern, PageHeader, ScrollReveal, StaggerChildren, HoverCard } from "@/components/ui/PageWrapper";
 
 export default function FeaturesPage() {
@@ -44,6 +44,16 @@ export default function FeaturesPage() {
   }
 
   const features = [
+    {
+      title: "AI Flashcards",
+      description: "Active recall study decks generated from AI topics or your enrolled courses with 3D flip cards",
+      icon: <Layers className="w-10 h-10 text-indigo-500" />,
+      href: "/features/flashcards",
+      color: "bg-indigo-500/10",
+      borderColor: "hover:border-indigo-500/50",
+      premium: false,
+      badge: "New"
+    },
     {
       title: "Analytics Dashboard",
       description: "Track student performance, engagement metrics, and course completion rates",
