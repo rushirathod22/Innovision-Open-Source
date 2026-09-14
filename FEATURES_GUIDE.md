@@ -221,6 +221,38 @@ await fetch("/api/gamification/stats", {
 
 ---
 
+## Feature 6: AI Flashcard Studio
+
+### Overview
+An interactive, spaced-repetition learning tool that uses AI (Gemini 2.5 Flash) to generate custom 3D flashcards for active recall and memory retention. Includes offline fallbacks and Text-to-Speech integration.
+
+### Access
+Navigate to `/features/flashcards` to access the flashcard studio.
+
+### Features
+
+#### 1. **AI Deck Generation**
+- Input any topic to generate targeted cards.
+- Select difficulty levels (Beginner, Intermediate, Advanced).
+- Generate flashcards directly from enrolled courses.
+- Intelligent offline fallback templates (Data Structures, JS, etc.).
+
+#### 2. **Interactive 3D UI**
+- CSS 3D card flipping mechanics.
+- Tactile keyboard shortcuts (Space to flip, Arrows to score, H for hint).
+- Text-to-Speech (TTS) integration for auditory learning.
+
+#### 3. **Spaced Repetition & Gamification**
+- "Study Again" vs "I Knew This" active recall tracking.
+- Mastery percentage and progress bars.
+- Streak tracking and session timers.
+- Awards XP (e.g., +15 XP) upon deck mastery with celebratory confetti.
+
+### API Endpoints
+- `POST /api/flashcards/generate` - Generates flashcards using Gemini AI or fallback templates.
+
+---
+
 ## Components Created
 
 ### Instructor Studio
